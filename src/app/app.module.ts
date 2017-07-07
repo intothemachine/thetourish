@@ -11,6 +11,19 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+// Import the AF2 Module
+import { AngularFireModule } from 'angularfire2';
+ 
+// AF2 Settings
+export const firebaseConfig = {
+    apiKey: "AIzaSyD6kP-cK2bQeEfMJZHWTDhHtmQ5zxjDWOA",
+    authDomain: "fractalstruct-11f4e.firebaseapp.com",
+    databaseURL: "https://fractalstruct-11f4e.firebaseio.com",
+    projectId: "fractalstruct-11f4e",
+    storageBucket: "fractalstruct-11f4e.appspot.com",
+    messagingSenderId: "1034080952900"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
